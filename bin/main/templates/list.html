@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>メンバー一覧表示</title>
+</head>
+<body>
+	<h3>メンバー一覧表示</h3>
+	<table border="1">
+		<tr>
+			<td>ID</td><td>名前</td><td>部署</td>
+		</tr>
+		<tr th:each="member:${list}">
+			<td th:text="${member.id}"></td>
+			<td th:text="${member.name}"></td>
+			<td th:text="${member.busyo}"></td>
+		</tr>	
+	</table>
+	<br>
+	<form th:action="@{/index}" method="get">
+		<input type="submit" value="戻る">
+	</form>
+</body>
+</html>

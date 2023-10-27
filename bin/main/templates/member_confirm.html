@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>登録確認画面</title>
+</head>
+<body>
+	<h2>以下の内容で登録してもよろしいですか</h2>
+名前：[[ ${memberForm.name} ]]<br>
+部署：[[ ${memberForm.busyo} ]]<br>
+	<form th:action="@{insert}" method="post">
+		<input type="submit" value="登録">
+	</form>
+	<form th:action="@{/menu}" method="post">
+		<input type="submit" name="insert" value="戻る">
+	</form>
+</body>
+</html>
